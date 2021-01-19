@@ -1,0 +1,11 @@
+& {
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    bottom: 0px;
+    width: 260px;
+    border-right: 1px solid #ccc;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 9998;
+}
