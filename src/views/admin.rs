@@ -1,6 +1,6 @@
 use yew::prelude::*;
 use yew_router::{ prelude::*, Switch };
-use crate::views::pages::{
+use super::pages::{
     Aside, Footer, Header, Content,
     content::{ Index }
 };

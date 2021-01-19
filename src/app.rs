@@ -1,6 +1,6 @@
 use yew::prelude::*;
 use yew_router::{ prelude::*, Switch };
-use crate::views::{ Admin, Login };
+use super::views::{ Admin, Login };
 
 // 项目根组件
 pub struct App;
