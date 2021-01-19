@@ -34,9 +34,13 @@ impl Component for Aside {
     fn view(&self) -> Html {
         html! {
             <div class=self.style.clone()>
-                <RouterAnchor<AdminRoute> route=AdminRoute::AdminIndex>
-                    <button>{"AsideIndex"}</button>
-                </RouterAnchor<AdminRoute>>
+                <ul class="list">
+                    <li>
+                    <RouterAnchor<AdminRoute> route=AdminRoute::AdminIndex>
+                        {"首页"}
+                    </RouterAnchor<AdminRoute>>
+                    </li>
+                </ul>
             </div>
         }
     }

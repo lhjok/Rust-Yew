@@ -34,9 +34,11 @@ impl Component for Header {
     fn view(&self) -> Html {
         html! {
             <div class=self.style.clone()>
-                <RouterAnchor<AdminRoute> route=AdminRoute::AdminIndex>
-                    <button>{"HeaderIndex"}</button>
-                </RouterAnchor<AdminRoute>>
+                <div class="logo">
+                    <RouterAnchor<AdminRoute> route=AdminRoute::Admin>
+                        <img src="image/title.png"/>
+                    </RouterAnchor<AdminRoute>>
+                </div>
             </div>
         }
     }

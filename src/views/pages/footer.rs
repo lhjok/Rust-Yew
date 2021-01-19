@@ -1,6 +1,4 @@
 use yew::prelude::*;
-use crate::views::admin::AdminRoute;
-use yew_router::prelude::*;
 use css_in_rust::Style;
 
 // Footer组件
@@ -34,9 +32,9 @@ impl Component for Footer {
     fn view(&self) -> Html {
         html! {
             <div class=self.style.clone()>
-                <RouterAnchor<AdminRoute> route=AdminRoute::AdminIndex>
-                    <button>{"FooterIndex"}</button>
-                </RouterAnchor<AdminRoute>>
+                <p>{"千鸟科技 - 瑞金市千鸟网络科技有限公司 CopyRight 2017-2020"}
+                <span>{" - 赣ICP备17011754号-2 - "}</span>{" 软件著作权 - "}
+                <span>{"软著登字第8888888号"}</span></p>
             </div>
         }
     }
