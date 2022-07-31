@@ -1,0 +1,119 @@
+body {
+    color: #666666;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #eef1f6;
+    padding: 0;
+    margin: 0;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: block;
+    float: right;
+    padding: 10px;
+}
+
+#content {
+    display: block;
+    flex: 1;
+    flex-basis: auto;
+    overflow: auto;
+    box-sizing: border-box;
+    min-width: 1900px;
+    padding-left: 276px;
+    padding-bottom: 15px;
+    padding-top: 76px;
+    padding-right: 15px;
+}
+
+#aside {
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    bottom: 0px;
+    width: 260px;
+    border-right: 1px solid #ccc;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 9998;
+    ul.list {
+        padding: 17px 0 10px 25px;
+        margin: 0;
+    }
+    ul.list li a {
+        color: #444;
+        width: 83%;
+        height: 35px;
+        line-height: 35px;
+        background-color: rgb(252, 224, 218);
+        border-radius: 3px;
+        text-decoration: none;
+        padding-left: 10px;
+        display: block;
+    }
+    ul.list li a:hover {
+        color: #666;
+        background-color: rgb(253, 235, 230);
+    }
+}
+
+.content {
+    padding: 0;
+    margin: 15px 0;
+}
+
+#contentindex {
+    padding: 0;
+    margin: 15px 0;
+    .hello-world {
+        font-size: 25px;
+        margin-left: 25px;
+    }
+}
+
+#footer {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 276px;
+    background-color: rgb(238, 241, 246);
+    margin: 0px;
+    p {
+        color: #444;
+        font-size: 16px;
+        margin: 0 5px 0 0;
+    }
+    p span {
+        color: red;
+    }
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #00d1b2;
+    border-bottom: 1px solid #009781;
+    z-index: 9999;
+}
+
+#login {
+    padding: 0;
+    margin: 0;
+    .hello-world {
+        font-size: 25px;
+        margin-left: 20px;
+    }
+}
