@@ -1,30 +1,15 @@
 [package]
-authors = ["lhjok <lhjok@live.cn>"]
-categories = ["wasm"]
-description = "Rust Yew"
-edition = "2018"
-license = "MIT"
 name = "rust_yew"
-readme = "./README.md"
 version = "0.1.0"
-
-[lib]
-crate-type = ["cdylib", "rlib"]
-
-[features]
-default = ["console_error_panic_hook"]
+authors = ["lhjok <lhjok@live.cn>"]
+description = "Rust Yew"
+edition = "2021"
+license = "MIT"
 
 [dependencies]
-wasm-bindgen = "0.2.64"
-web_logger = "0.2"
-yew = {version= "0.17.3", features= ["web_sys"]}
-yew-router = { version= "0.14.0", features= ["web_sys"] }
-yew_styles = { version= "0.9", features= ["button", "text", "navbar"] }
-css-in-rust = { version = "0.5.0", features = ["yew_integration"] }
-console_error_panic_hook = { version = "0.1.6", optional = true }
-wasm-logger = "0.2.0"
-wee_alloc = "0.4.5"
-log = "0.4.8"
+wasm-bindgen = "0.2.82"
+yew = "0.19"
+yew-router = "0.16"
 
 [dev-dependencies]
-wasm-bindgen-test = "0.3.8"
+wasm-bindgen-test = "0.3.32"

@@ -1,54 +1,43 @@
 use yew::prelude::*;
-use yew_router::{ prelude::*, Switch };
+use yew_router::prelude::*;
 use super::pages::{
     Aside, Footer, Header, Content,
     content::{ Index }
 };
 
-// Admin组件
-pub struct Admin;
-
-#[derive(Switch, Debug, Clone)]
+// 二级路由设置
+#[derive(Clone, Routable, PartialEq)]
 pub enum AdminRoute {
-    #[to = "/#/admin/index"]
+    #[at("/admin")]
+    Admin,
+    #[at("/admin/index")]
     AdminIndex,
-    #[to = "/#/admin"]
-    Admin
+    #[not_found]
+    #[at("/404")]
+    NotFound,
 }
 
-impl Component for Admin {
-    type Message = ();
-    type Properties = ();
-
-    fn create(_: Self::Properties, _: ComponentLink<Self>) -> Self {
-        Admin{}
+pub fn switch_admin(routes: &AdminRoute) -> Html {
+    match routes {
+        AdminRoute::Admin => html!{
+            <Redirect<AdminRoute> to={AdminRoute::AdminIndex}/>
+        },
+        AdminRoute::AdminIndex => html!{ <Index/> },
+        AdminRoute::NotFound => html! { <h1>{ "404" }</h1> }
     }
+}
 
-    fn update(&mut self, _: Self::Message) -> ShouldRender {
-        true
-    }
-
-    fn change(&mut self, _: Self::Properties) -> ShouldRender {
-        false
-    }
-
-    fn view(&self) -> Html {
-        html! {
-            <div id="app">
-                <Header/>
-                <Aside/>
-                <Content>
-                    <Router<AdminRoute>
-                        render = Router::render(|switch: AdminRoute| {
-                            match switch {
-                                AdminRoute::AdminIndex => html!{ <Index/> },
-                                AdminRoute::Admin => html!{ <Index/> }
-                            }
-                        })
-                    />
-                </Content>
-                <Footer/>
-            </div>
-        }
+// Admin组件
+#[function_component(Admin)]
+pub fn admin() -> Html {
+    html! {
+        <div id="admin">
+            <Header/>
+            <Aside/>
+            <Content>
+                <Switch<AdminRoute> render={Switch::render(switch_admin)} />
+            </Content>
+            <Footer/>
+        </div>
     }
 }

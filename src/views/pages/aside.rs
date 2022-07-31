@@ -1,44 +1,34 @@
 use yew::prelude::*;
 use crate::views::admin::AdminRoute;
 use yew_router::prelude::*;
-use css_in_rust::Style;
 
 // Aside组件
-pub struct Aside {
-    style: Style
-}
+pub struct Aside;
 
 impl Component for Aside {
     type Message = ();
     type Properties = ();
 
-    fn create(_: Self::Properties, _: ComponentLink<Self>) -> Self {
-        let css = include_str!("../../../static/styles/aside.css");
-        let style = match Style::create("aside", css) {
-            Ok(style) => style,
-            Err(error) => { panic!("Error Style: {}", error); }
-        };
-        Self {
-            style
-        }
+    fn create(_: &Context<Self>) -> Self {
+        Self {}
     }
 
-    fn update(&mut self, _: Self::Message) -> ShouldRender {
+    fn update(&mut self, _: &Context<Self>, _: Self::Message) -> bool {
         true
     }
 
-    fn change(&mut self, _: Self::Properties) -> ShouldRender {
+    fn changed(&mut self, _: &Context<Self>) -> bool {
         false
     }
 
-    fn view(&self) -> Html {
+    fn view(&self, _: &Context<Self>) -> Html {
         html! {
-            <div class=self.style.clone()>
+            <div id="aside">
                 <ul class="list">
                     <li>
-                    <RouterAnchor<AdminRoute> route=AdminRoute::AdminIndex>
-                        {"首页"}
-                    </RouterAnchor<AdminRoute>>
+                        <Link<AdminRoute> to={AdminRoute::Admin}>
+                            {"首页"}
+                        </Link<AdminRoute>>
                     </li>
                 </ul>
             </div>

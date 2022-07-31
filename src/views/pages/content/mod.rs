@@ -3,11 +3,9 @@ use yew::prelude::*;
 pub use self::index::Index;
 
 // Content容器组件
-pub struct Content {
-    props: Props,
-}
+pub struct Content;
 
-#[derive(Properties, Clone)]
+#[derive(Properties, PartialEq, Clone)]
 pub struct Props {
     pub children: Children,
 }
@@ -16,24 +14,22 @@ impl Component for Content {
     type Message = ();
     type Properties = Props;
 
-    fn create(props: Self::Properties, _: ComponentLink<Self>) -> Self {
-        Content {
-            props
-        }
+    fn create(_: &Context<Self>) -> Self {
+        Content {}
     }
 
-    fn update(&mut self, _: Self::Message) -> ShouldRender {
+    fn update(&mut self, _: &Context<Self>, _: Self::Message) -> bool {
         true
     }
 
-    fn change(&mut self, _: Self::Properties) -> ShouldRender {
+    fn changed(&mut self, _: &Context<Self>) -> bool {
         false
     }
 
-    fn view(&self) -> Html {
+    fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
             <div id="content">
-                { self.props.children.clone() }
+                { for ctx.props().children.iter() }
             </div>
         }
     }
