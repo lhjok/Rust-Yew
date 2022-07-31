@@ -21,9 +21,7 @@ impl Component for Index {
     fn view(&self, _: &Context<Self>) -> Html {
         html! {
             <div id="contentindex">
-                <button>{"+"}</button>
-                <span class="hello-world">{ "Index" }</span>
-                <button>{"-"}</button>
+                <span class="hello-world"><h1>{"Index"}</h1></span>
             </div>
         }
     }

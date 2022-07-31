@@ -22,9 +22,7 @@ impl Component for Login {
     fn view(&self, _: &Context<Self>) -> Html {
         html! {
             <div id="login">
-                <button>{"+"}</button>
-                <span class="hello-world">{ "Login" }</span>
-                <button>{"-"}</button>
+                <span class="hello-world"><h1>{"Login"}</h1></span>
             </div>
         }
     }
