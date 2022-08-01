@@ -12,23 +12,34 @@ pub enum AppRoute {
     Login,
     #[at("/admin")]
     Admin,
-    // 二级路由设置
     #[at("/admin/:route")]
     AdminRoute,
     #[not_found]
     #[at("/404")]
-    NotFound,
+    NotFound
+}
+
+// 二级路由设置
+#[derive(Clone, Routable, PartialEq)]
+pub enum AdminRoute {
+    #[at("/admin")]
+    Admin,
+    #[at("/admin/index")]
+    AdminIndex,
+    #[not_found]
+    #[at("/admin/404")]
+    NotFound
 }
 
 pub fn switch_main(routes: &AppRoute) -> Html {
     match routes {
-        AppRoute::Home => html!{
+        AppRoute::Home => html!{ 
             <Redirect<AppRoute> to={AppRoute::Admin}/>
         },
         AppRoute::Login => html!{ <Login/> },
         AppRoute::Admin => html!{ <Admin/> },
         AppRoute::AdminRoute => html!{ <Admin/> },
-        AppRoute::NotFound => html! { <h1>{ "404" }</h1> }
+        AppRoute::NotFound => html!{ <h1>{ "404" }</h1> }
     }
 }
 

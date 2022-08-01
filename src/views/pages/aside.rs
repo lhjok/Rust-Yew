@@ -1,5 +1,5 @@
 use yew::prelude::*;
-use crate::views::admin::AdminRoute;
+use crate::{AppRoute, AdminRoute};
 use yew_router::prelude::*;
 
 // Aside组件
@@ -26,8 +26,13 @@ impl Component for Aside {
             <div id="aside">
                 <ul class="list">
                     <li>
-                        <Link<AdminRoute> to={AdminRoute::Admin}>
+                        <Link<AppRoute> to={AppRoute::Home}>
                             {"首页"}
+                        </Link<AppRoute>>
+                    </li>
+                    <li>
+                        <Link<AdminRoute> to={AdminRoute::Admin}>
+                            {"管理"}
                         </Link<AdminRoute>>
                     </li>
                 </ul>
