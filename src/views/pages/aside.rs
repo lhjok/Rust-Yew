@@ -1,6 +1,6 @@
 use yew::prelude::*;
-use crate::{AppRoute, AdminRoute};
 use yew_router::prelude::*;
+use crate::route::{AppRoute, AdminRoute};
 
 // Aside组件
 pub struct Aside;

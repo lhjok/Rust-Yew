@@ -1,6 +1,6 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
-use crate::AdminRoute;
+use crate::route::AdminRoute;
 use super::pages::{
     Aside, Footer, Header, Content,
     content::{ Index }
