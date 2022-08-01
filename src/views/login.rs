@@ -12,7 +12,7 @@ impl Component for Login {
     }
 
     fn update(&mut self, _: &Context<Self>, _: Self::Message) -> bool {
-        true // 指示组件应该重新渲染
+        true
     }
 
     fn changed(&mut self, _: &Context<Self>) -> bool {

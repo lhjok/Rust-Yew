@@ -1,6 +1,5 @@
 use yew_router::prelude::*;
 
-// 一级路由设置
 #[derive(Clone, Routable, PartialEq)]
 pub enum AppRoute {
     #[at("/")]
@@ -16,7 +15,6 @@ pub enum AppRoute {
     NotFound
 }
 
-// 二级路由设置
 #[derive(Clone, Routable, PartialEq)]
 pub enum AdminRoute {
     #[at("/admin")]
