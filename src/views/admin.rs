@@ -1,6 +1,6 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
-use crate::route::AdminRoute;
+use crate::route::{AppRoute, AdminRoute};
 use super::pages::{
     Aside, Footer, Header, Content,
     content::{ Index }
@@ -9,10 +9,12 @@ use super::pages::{
 pub fn switch_admin(routes: &AdminRoute) -> Html {
     match routes {
         AdminRoute::Admin => html!{ 
-            <Redirect<AdminRoute> to={AdminRoute::AdminIndex}/>
+            <Redirect<AdminRoute> to={AdminRoute::AdminIndex} />
         },
         AdminRoute::AdminIndex => html!{ <Index/> },
-        AdminRoute::NotFound => html!{ <h1>{ "404" }</h1> }
+        AdminRoute::NotFound => html!{
+            <Redirect<AppRoute> to={AppRoute::NotFound} />
+        }
     }
 }
 
