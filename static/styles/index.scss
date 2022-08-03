@@ -78,7 +78,7 @@ nav li {
 #contentindex {
     padding: 0;
     margin: 15px 0;
-    .hello-world {
+    .hello-index {
         font-size: 25px;
         margin-left: 25px;
     }
@@ -115,7 +115,25 @@ nav li {
 #login {
     padding: 0;
     margin: 0;
-    .hello-world {
+    .hello-login {
+        font-size: 25px;
+        margin-left: 20px;
+    }
+}
+
+#home {
+    padding: 0;
+    margin: 0;
+    .hello-home {
+        font-size: 25px;
+        margin-left: 20px;
+    }
+}
+
+#error {
+    padding: 0;
+    margin: 0;
+    .hello-404 {
         font-size: 25px;
         margin-left: 20px;
     }

@@ -3,17 +3,15 @@ mod route;
 use yew::prelude::*;
 use yew_router::prelude::*;
 use route::AppRoute;
-use views::{ Admin, Login };
+use views::{ Admin, Login, Home, Error };
 
 pub fn switch_main(routes: &AppRoute) -> Html {
     match routes {
-        AppRoute::Home => html!{ 
-            <Redirect<AppRoute> to={AppRoute::Admin}/>
-        },
+        AppRoute::Home => html!{ <Home/> },
         AppRoute::Login => html!{ <Login/> },
         AppRoute::Admin => html!{ <Admin/> },
         AppRoute::AdminRoute => html!{ <Admin/> },
-        AppRoute::NotFound => html!{ <h1>{ "404" }</h1> }
+        AppRoute::NotFound => html!{ <Error/> }
     }
 }
 

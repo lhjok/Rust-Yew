@@ -1,9 +1,9 @@
 use yew::prelude::*;
 
-// Login组件
-pub struct Login;
+// Error组件
+pub struct Error;
 
-impl Component for Login {
+impl Component for Error {
     type Message = ();
     type Properties = ();
 
@@ -21,8 +21,8 @@ impl Component for Login {
 
     fn view(&self, _: &Context<Self>) -> Html {
         html! {
-            <div id="login">
-                <span class="hello-login"><h1>{"Login"}</h1></span>
+            <div id="error">
+                <span class="hello-404"><h1>{"404"}</h1></span>
             </div>
         }
     }

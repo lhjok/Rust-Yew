@@ -1,4 +1,5 @@
 use yew::prelude::*;
+
 // Index组件
 pub struct Index;
 
@@ -21,7 +22,7 @@ impl Component for Index {
     fn view(&self, _: &Context<Self>) -> Html {
         html! {
             <div id="contentindex">
-                <span class="hello-world"><h1>{"Index"}</h1></span>
+                <span class="hello-index"><h1>{"Index"}</h1></span>
             </div>
         }
     }
