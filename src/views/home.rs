@@ -1,7 +1,17 @@
 use yew::prelude::*;
+use yew_router::prelude::*;
+use crate::route::{AppRoute, AdminRoute};
 
 // Home组件
 pub struct Home;
+
+pub fn switch_main(routes: &AppRoute) -> Html {
+    match routes {
+        _ => html!{
+            <Redirect<AdminRoute> to={AdminRoute::AdminIndex} />
+        }
+    }
+}
 
 impl Component for Home {
     type Message = ();
@@ -22,7 +32,7 @@ impl Component for Home {
     fn view(&self, _: &Context<Self>) -> Html {
         html! {
             <div id="home">
-                <span class="hello-home"><h1>{"Home"}</h1></span>
+                <Switch<AppRoute> render={Switch::render(switch_main)} />
             </div>
         }
     }
