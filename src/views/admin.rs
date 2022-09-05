@@ -2,8 +2,7 @@ use yew::prelude::*;
 use yew_router::prelude::*;
 use crate::route::{AppRoute, AdminRoute};
 use super::pages::{
-    Aside, Footer, Header, Content,
-    content::{ Index }
+    Aside, Footer, Header, Content, content::Index
 };
 
 pub fn switch_admin(routes: &AdminRoute) -> Html {
