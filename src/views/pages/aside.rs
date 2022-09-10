@@ -31,7 +31,7 @@ impl Component for Aside {
                         </Link<AppRoute>>
                     </li>
                     <li>
-                        <Link<AdminRoute> to={AdminRoute::Admin}>
+                        <Link<AdminRoute> to={AdminRoute::AdminIndex}>
                             {"管理"}
                         </Link<AdminRoute>>
                     </li>

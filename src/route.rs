@@ -17,8 +17,6 @@ pub enum AppRoute {
 
 #[derive(Clone, Routable, PartialEq)]
 pub enum AdminRoute {
-    #[at("/admin")]
-    Admin,
     #[at("/admin/index")]
     AdminIndex,
     #[not_found]
