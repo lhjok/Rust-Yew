@@ -1,27 +1,15 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
-use crate::route::{AppRoute, AdminRoute};
+use crate::views::Error;
+use crate::route::AdminRoute;
 use super::pages::{
     Aside, Footer, Header, Content, content::Index
 };
 
-pub fn switch_main(routes: &AppRoute) -> Html {
-    match routes {
-        AppRoute::Admin => html!{ 
-            <Redirect<AdminRoute> to={AdminRoute::AdminIndex} />
-        },
-        AppRoute::AdminRoute | _ => html!{ 
-            <Switch<AdminRoute> render={Switch::render(switch_admin)} />
-        }
-    }
-}
-
-pub fn switch_admin(routes: &AdminRoute) -> Html {
+pub fn switch_main(routes: &AdminRoute) -> Html {
     match routes {
         AdminRoute::AdminIndex => html!{ <Index/> },
-        AdminRoute::NotFound => html!{
-            <Redirect<AppRoute> to={AppRoute::NotFound} />
-        }
+        AdminRoute::NotFound => html!{ <Error/> }
     }
 }
 
@@ -33,7 +21,7 @@ pub fn admin() -> Html {
             <Header/>
             <Aside/>
             <Content>
-                <Switch<AppRoute> render={Switch::render(switch_main)} />
+                <Switch<AdminRoute> render={Switch::render(switch_main)} />
             </Content>
             <Footer/>
         </div>
