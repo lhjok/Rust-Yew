@@ -1,6 +1,8 @@
 pub mod index;
+pub mod config;
 use yew::prelude::*;
 pub use self::index::Index;
+pub use self::config::Config;
 
 // Content容器组件
 pub struct Content;
@@ -16,14 +18,6 @@ impl Component for Content {
 
     fn create(_: &Context<Self>) -> Self {
         Content {}
-    }
-
-    fn update(&mut self, _: &Context<Self>, _: Self::Message) -> bool {
-        true
-    }
-
-    fn changed(&mut self, _: &Context<Self>) -> bool {
-        false
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {

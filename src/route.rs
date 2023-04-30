@@ -19,6 +19,8 @@ pub enum AppRoute {
 pub enum AdminRoute {
     #[at("/admin/index")]
     AdminIndex,
+    #[at("/admin/config")]
+    AdminConfig,
     #[not_found]
     #[at("/admin/404")]
     NotFound
